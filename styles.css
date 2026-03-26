@@ -1504,6 +1504,127 @@ body:hover .cursor-glow { opacity: 1; }
   .resources-grid { grid-template-columns: 1fr; }
 }
 
+/* --- Example Links (clickable creative references) --- */
+.example-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.example-links-card {
+  padding: 0 1.5rem 1.5rem;
+}
+.example-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.4;
+}
+.example-link:hover {
+  color: var(--text);
+  background: rgba(0,109,111,0.12);
+  border-color: rgba(0,160,163,0.3);
+  transform: translateX(4px);
+}
+.ex-icon {
+  font-size: 0.55rem;
+  color: var(--accent-light);
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.example-link:hover .ex-icon {
+  transform: translateX(2px);
+}
+
+/* --- Example Cards (larger clickable visual references) --- */
+.examples-heading {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 3rem 0 1.5rem;
+  color: var(--text);
+}
+.examples-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.example-card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1.75rem;
+  min-height: 180px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.example-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+  z-index: 0;
+  transition: opacity 0.3s;
+}
+.example-card:hover {
+  border-color: rgba(0,160,163,0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.example-card:hover::before {
+  opacity: 0.8;
+}
+.example-card-inner {
+  position: relative;
+  z-index: 1;
+}
+.example-card-source {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-light);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.example-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+.example-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.example-arrow {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  color: var(--text-dim);
+  transition: all 0.3s;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+.example-card:hover .example-arrow {
+  color: var(--accent-light);
+  transform: translateX(4px);
+}
+
 /* Selection */
 ::selection {
   background: rgba(0,109,111,0.4);
